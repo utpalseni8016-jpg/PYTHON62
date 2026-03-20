@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Hero -->
+  <section class="pt-32 pb-20 md:pt-48 md:pb-32 bg-[#141414] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <!-- Optional subtle pattern / grid -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+      <p class="text-[#09A492] font-semibold tracking-wider uppercase mb-4">EV CHARGING AND SERVICES</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+      <span class="text-[#09A492]">EV</span><br>charging solution
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+        Fast and convenient EV charging solutions
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+        <a href="#" class="bg-[#09A492] hover:bg-[#09A492] text-gray-950 font-bold px-10 py-5 rounded-xl text-lg transition transform hover:-translate-y-1">
+          Discover More
+        </a>
+        <a href="#" class="border-2 border-[#09A492]/30 hover:border-[#09A492] text-[#09A492] font-bold px-10 py-5 rounded-xl text-lg transition">
+          Our Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Features -->
+  <section class="py-20 ">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-10 text-center">
+      <div>
+        <div class="text-5xl font-bold text-[#09A492] mb-3">2K+</div>
+        <p class="text-gray-200 text-lg">Happy Customers</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-[#09A492] mb-3">500+</div>
+        <p class="text-gray-200 text-lg">Charging Stations</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-[#09A492] mb-3">98%</div>
+        <p class="text-gray-200 text-lg">Satisfaction Rate</p>
+      </div>
+    </div>
+  </section>
+  <hr class="border-gray-800 my-10">
+
+  <!-- Services Grid -->
+  <section class="py-24 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-5">Discover Fast & Reliable Solutions</h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          We provide fast, safe and convenient charging for all types of electric vehicles
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#09A492]/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 bg-gray-800 relative">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar EV" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#09A492] transition">Solar Powered Charging</h3>
+            <p class="text-gray-400 mb-6">Sustainable charging with integrated solar solutions.</p>
+            <a href="#" class="text-[#09A492] font-semibold hover:underline">Discover →</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+       <div class="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#09A492]/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 bg-gray-800 relative">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar EV" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#09A492] transition">Solar Powered Charging</h3>
+            <p class="text-gray-400 mb-6">Sustainable charging with integrated solar solutions.</p>
+            <a href="#" class="text-[#09A492] font-semibold hover:underline">Discover →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#09A492]/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 bg-gray-800 relative">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar EV" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#09A492] transition">Solar Powered Charging</h3>
+            <p class="text-gray-400 mb-6">Sustainable charging with integrated solar solutions.</p>
+            <a href="#" class="text-[#09A492] font-semibold hover:underline">Discover →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-24 bg-gradient-to-r from-[#09A492]/30 to-gray-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Power Your Electric Journey?</h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        Find the nearest charging station or book a service appointment today.
+      </p>
+      <a href="#" class="inline-block bg-[#09A492] hover:bg-[#09A492] text-gray-950 font-bold text-lg px-12 py-6 rounded-xl transition transform hover:-translate-y-1 shadow-xl shadow-[#09A492]/30">
+        Locate a Station
+      </a>
+    </div>
+  </section>
+
+{% endblock content %}
+

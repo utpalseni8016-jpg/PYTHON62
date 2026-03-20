@@ -1,0 +1,62 @@
+{% load static %}
+<!-- HEADER -->
+<header class="bg-[#101112] border-b border-white/5 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+    <!-- logo -->
+   <a href="{% url "home" %}">
+     <div class="flex items-center gap-2">
+        <img src="{% static "/assets/logo.png" %}" class="w-[250px]" alt="">
+    </div>
+</a>
+    <!-- search bar (refined) after login -->
+     
+
+
+    <!-- action icons -->
+    <div class="flex ">
+        <a href="{% url "sign-in" %}" > 
+            <div class="flex justify-end pr-3">
+            <label for="Sigin-in-toggle"
+                    class="w-[110px] h-[40px] bg-[#1e1f22] text-white rounded-xl shadow-lg cursor-pointer hover:scale-105 transition transform duration-300 flex items-center justify-center">
+
+                    <span class="text-sm font-semibold">
+                        Sign In
+                    </span>
+                </label>
+            </div>
+        </a>
+        <a href="{% url "sign-up" %}" > 
+        <div class="flex justify-end pr-3">
+            <div
+                class="w-[110px] h-[40px] bg-[#1e1f22] text-white rounded-xl shadow-lg cursor-pointer hover:scale-105 transition transform duration-300 flex items-center justify-center">
+
+                <span class="text-sm font-semibold">
+                    Sign Up
+                </span>
+            </div>
+        </div>
+    </a>
+        <a href="{% url "sign-up" %}" > 
+        <div class="flex justify-end pr-3">
+            <div
+                class="w-[110px] h-[40px] bg-[#1e1f22] text-white rounded-xl shadow-lg cursor-pointer hover:scale-105 transition transform duration-300 flex items-center justify-center">
+
+                <span class="text-sm font-semibold">
+                    Dashboard
+                </span>
+            </div>
+        </div>
+    </a>
+        <a href="{% url "sign-up" %}" > 
+        <div class="flex justify-end pr-3">
+            <div for="Sigin-in-toggle"
+                class="w-[110px] h-[40px] bg-red-600 text-white rounded-xl shadow-lg cursor-pointer hover:scale-105 transition transform duration-300 flex items-center justify-center">
+
+                <span class="text-sm font-semibold">
+                    Logout
+                </span>
+            </div>
+        </div>
+    </a>
+    </div>
+
+</header>
