@@ -1,27 +1,39 @@
+{% load static %}
 <header class="bg-[#101112] border-b border-white/5 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
         <!-- logo -->
-        <div class="flex items-center gap-2">
-            <img src="./assets/logo.png" class="w-50" alt="">
-        </div>
+        <a href="{% url "home" %}">
+            <div class="flex items-center gap-2">
+                <img src="{% static "assets/logo.png" %}" class="w-50" alt="">
+            </div>
+        </a>
 
         <!-- search bar (refined) -->
         <div class="relative w-full max-w-md">
             <input
                 class="w-full bg-[#1e1f22] border border-white/5 rounded-xl py-2.5 pl-11 pr-4 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-700/50 transition"
                 type="text" placeholder="Search vehicle or slot...">
-            <img class="w-4 h-4 absolute left-4 top-3.5 opacity-50" src="./assets/search.png" alt="search">
+            <img class="w-4 h-4 absolute left-4 top-3.5 opacity-50" src="{% static "assets/search.png" %}" alt="search">
         </div>
 
         <!-- action icons -->
         <div class="flex items-center gap-2">
+            {% if user.is_superuser %}
+            <a href="/admin/">
+                <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
+                    <img class="w-5 h-5 opacity-80" src="{% static "assets/admin.png" %}" alt="settings">
+                </button>
+            </a>
+            {% endif %}
             <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
-                <img class="w-5 h-5 opacity-80" src="./assets/briefcase.png" alt="briefcase">
+                <img class="w-5 h-5 opacity-80" src="{% static "assets/bell.png" %}" alt="bell">
             </button>
             <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
-                <img class="w-5 h-5 opacity-80" src="./assets/bell.png" alt="bell">
+                <img class="w-5 h-5 opacity-80" src="{% static "assets/settings.png" %}" alt="settings">
             </button>
-            <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
-                <img class="w-5 h-5 opacity-80" src="./assets/settings.png" alt="settings">
-            </button>
+            <a href="{% url "logout" %}">
+                <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
+                    <img class="w-5 h-5 opacity-80" src="{% static "assets/logout.png" %}" alt="settings">
+                </button>
+            </a>
         </div>
     </header>

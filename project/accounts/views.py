@@ -20,7 +20,7 @@ def sign_in(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "Login Successfull!")
-                return redirect('home')
+                return redirect('overview')
             else:
                 messages.error(request, "Invalid credentials!")
                 return redirect('sign-in')
