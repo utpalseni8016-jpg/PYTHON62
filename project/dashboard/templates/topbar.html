@@ -27,9 +27,11 @@
             <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
                 <img class="w-5 h-5 opacity-80" src="{% static "assets/bell.png" %}" alt="bell">
             </button>
-            <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
-                <img class="w-5 h-5 opacity-80" src="{% static "assets/settings.png" %}" alt="settings">
-            </button>
+            <a href="{% url "profile" %}">
+                <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
+                    <img class="w-5 h-5 opacity-80" src="{% static "assets/settings.png" %}" alt="settings">
+                </button>
+            </a>
             <a href="{% url "logout" %}">
                 <button class="bg-[#1e1f22] hover:bg-[#2a2c30] p-2.5 rounded-xl border border-white/5 transition">
                     <img class="w-5 h-5 opacity-80" src="{% static "assets/logout.png" %}" alt="settings">

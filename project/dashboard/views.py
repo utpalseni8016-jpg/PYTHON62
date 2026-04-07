@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Car
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Car
+from .models import Car, Booking
 
 # Create your views here.
 @login_required(login_url='login')
@@ -32,7 +32,11 @@ def Overview(request):
     else:
         prev_car = Car.objects.filter(user=request.user, id__lt=car.id).order_by('-id').first()
         next_car = Car.objects.filter(user=request.user, id__gt=car.id).order_by('id').first()
-    return render(request, 'overview.html', {'car': car, 'prev_car': prev_car, 'next_car': next_car})
+
+    total_bookings = Booking.objects.filter(user = request.user).count()
+    total_cars = Car.objects.filter(user = request.user).count()
+
+    return render(request, 'overview.html', {'car': car, 'o_is_active':True ,'prev_car': prev_car, 'next_car': next_car, 'total_bookings': total_bookings, 'total_cars': total_cars})
 
 @login_required(login_url='login')
 def Add_car(request):
@@ -66,16 +70,14 @@ def Add_car(request):
             messages.error(request, "Please fill in all fields.")
             return redirect('add-car')
        
-    return render(request, 'add-car.html')
+    return render(request, 'add-car.html', {'o_is_active':True})
 
 def SlotBooking(request):
-    pass
+    return render(request, 'slot-bookings.html', {'sb_is_active':True})
 
 def ServiceHistory(request):
-    pass
+    return render(request, 'service-history.html', {'sh_is_active':True})
 
 def Notifications(request):
     pass
 
-def Settings(request):
-    pass

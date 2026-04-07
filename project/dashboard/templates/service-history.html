@@ -1,0 +1,111 @@
+{% extends "dbase.html" %}
+
+{% block content %}
+<!-- MAIN CONTENT: CHARGING HISTORY (replaced, everything else unchanged) -->
+<main class="flex-1 p-6 lg:p-8 w-[81vw]">
+    <!-- page title -->
+    <div class="mb-6 flex items-center justify-between">
+        <h1 class="text-2xl font-semibold text-white flex items-center gap-3"><span
+                class="w-1.5 h-7 bg-emerald-500 rounded-full"></span> Charging history</h1>
+        <div class="flex gap-2">
+            <button
+                class="bg-[#1e1f22] hover:bg-[#2a2c30] text-sm px-4 py-2 rounded-xl border border-white/5 flex items-center gap-2 transition"><i
+                    class="fas fa-sliders-h text-emerald-400"></i> filter</button>
+            <button
+                class="bg-emerald-700 hover:bg-emerald-600 text-sm px-4 py-2 rounded-xl flex items-center gap-2 transition"><i
+                    class="fas fa-plus"></i> add charge</button>
+        </div>
+    </div>
+
+    <!-- charging history cards (blurry station image integrated) -->
+    <div class="max-w-6xl w-full flex flex-col md:flex-row gap-7 items-stretch">
+
+        <!-- RIGHT: charging session list (similar style to service history but with charging data) -->
+        <div class="md:w-2/3 bg-white rounded-3xl p-7 shadow-xl border border-white/60 card-soft">
+            <!-- header with stats -->
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="text-2xl font-semibold tracking-tight text-slate-800 flex items-center gap-2">
+                    <span class="w-1.5 h-7 bg-emerald-600 rounded-full"></span> Recent sessions
+                </h2>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs text-slate-500 mb-6 bg-slate-100 w-fit px-4 py-2 rounded-full">
+                <i class="fas fa-bolt"></i> <span>12 charging sessions · 243 kWh total</span>
+            </div>
+
+            <!-- timeline/charging list -->
+            <div class="space-y-3">
+                <!-- item 1 -->
+                <div
+                    class="bg-slate-50/80 hover:bg-slate-100 rounded-2xl p-5 transition border border-slate-200/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-emerald-100 w-12 h-12 rounded-xl flex items-center justify-center text-emerald-700">
+                            <i class="fas fa-charging-station text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Supercharger V3 · 250 kW</h4>
+                            <p class="text-sm text-slate-500 flex items-center gap-3 mt-1"><span><i
+                                        class="far fa-calendar mr-1"></i> 18 Mar 2025</span> <span><i
+                                        class="fas fa-bolt mr-1"></i> 23 min</span></p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 pl-16 md:pl-0">
+                        <span class="font-mono font-semibold text-emerald-700">43.2 kWh</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-xs px-3 py-1.5 rounded-full">€
+                            21.34</span>
+                        <button
+                            class="text-slate-400 hover:text-emerald-600 bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm border"><i
+                                class="fas fa-chevron-right text-xs"></i></button>
+                    </div>
+                </div>
+
+                <!-- item 2 -->
+                <div
+                    class="bg-slate-50/80 hover:bg-slate-100 rounded-2xl p-5 transition border border-slate-200/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center text-blue-700">
+                            <i class="fas fa-home text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Home wallbox · 11 kW</h4>
+                            <p class="text-sm text-slate-500 flex items-center gap-3 mt-1"><span><i
+                                        class="far fa-calendar mr-1"></i> 16 Mar 2025</span> <span><i
+                                        class="fas fa-moon mr-1"></i> overnight</span></p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 pl-16 md:pl-0">
+                        <span class="font-mono font-semibold text-blue-700">58.1 kWh</span>
+                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1.5 rounded-full">€
+                            11.80</span>
+                        <button
+                            class="text-slate-400 hover:text-blue-600 bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm border"><i
+                                class="fas fa-chevron-right text-xs"></i></button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- summary footer -->
+            <div class="mt-6 flex items-center justify-between border-t border-slate-200 pt-5">
+                <p class="text-xs text-slate-400"><i class="fas fa-chart-line mr-1"></i> total 243 kWh · €
+                    62.04
+                </p>
+                <button class="text-sm text-emerald-700 font-medium flex items-center gap-1 hover:underline">view
+                    detailed <i class="fas fa-arrow-right text-xs"></i></button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- small note (consistent with your style) -->
+    <div
+        class="mt-6 text-xs text-gray-500 bg-[#1a1d21] w-fit px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">
+        <i class="fas fa-history text-emerald-400"></i> charging history · blurry station visual
+    </div>
+</main>
+{% endblock content %}
+

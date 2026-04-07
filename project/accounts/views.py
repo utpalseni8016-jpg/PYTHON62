@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def sign_in(request):
@@ -60,4 +61,19 @@ def logout_user(request):
     logout(request)
     messages.success(request, "User logout successfully!")
     return redirect('sign-in')
-    
+
+@login_required(login_url='sign-in')
+def user_profile(request):
+
+    if request.method == 'POST':
+        user = request.user
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.email = request.POST.get('email')
+        user.phone_number = request.POST.get('phone')
+        user.address = request.POST.get('address')
+        user.profile_picture = request.FILES.get('profile_picture')
+        user.save()
+        messages.success(request, "Profile updated successfully!")
+
+    return render(request, 'profile.html')

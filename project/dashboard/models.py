@@ -36,10 +36,19 @@ class ChargingStation(models.Model):
         return self.name    
 
 class ChargingPort(models.Model):
+
+    type_options = [
+        ('Ultra Fast', 'Ultra Fast'),
+        ('Fast', 'Fast'),
+        ('Slow', 'Slow'),
+        ('Standard', 'Standard')
+    ]
+
     station = models.ForeignKey(ChargingStation, on_delete=models.CASCADE, related_name='ports')
 
     port_number = models.IntegerField()
     charger_type = models.CharField(max_length=100)  # Type 2, CCS, CHAdeMO
+    charging_type = models.CharField(max_length=20, choices=type_options, default='Standard')
 
     price_per_kwh = models.FloatField()
     is_active = models.BooleanField(default=True)
